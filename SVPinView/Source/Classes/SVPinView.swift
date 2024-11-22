@@ -78,6 +78,7 @@ public class SVPinView: UIView {
     
     public var font: UIFont = UIFont.systemFont(ofSize: 15)
     public var keyboardType: UIKeyboardType = UIKeyboardType.phonePad
+    public var autoCapitalization : UITextAutocapitalizationType = .none
     public var keyboardAppearance: UIKeyboardAppearance = .default
     public var becomeFirstResponderAtIndex: Int? = nil
     public var isContentTypeOneTimeCode: Bool = true
@@ -343,6 +344,7 @@ extension SVPinView : UICollectionViewDataSource, UICollectionViewDelegate, UICo
             textField.textContentType = .oneTimeCode
         }
         textField.keyboardType = self.keyboardType
+        textField.autocapitalizationType = self.autoCapitalization
         textField.keyboardAppearance = self.keyboardAppearance
         textField.inputAccessoryView = self.pinInputAccessoryView
         
